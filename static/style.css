@@ -1,0 +1,309 @@
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background-color: #006994;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky; top: 0; z-index: 900;
+}
+.logo { font-size: 1.5rem; font-weight: bold; }
+nav ul { list-style: none; display: flex; gap: 25px; }
+nav a { color: white; text-decoration: none; font-weight: 500; }
+nav a:hover { color: #a8d8ea; }
+
+/* CARRUSEL */
+.carousel-container {
+    position: relative; height: 500px; width: 100%; overflow: hidden;
+    background-color: #333; margin-bottom: 30px;
+}
+.carousel-slide {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    opacity: 0; transition: opacity 1s ease-in-out; z-index: 1;
+}
+.carousel-slide.active { opacity: 1; z-index: 2; }
+.carousel-caption {
+    position: absolute; bottom: 20%; left: 10%; color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); max-width: 600px; z-index: 3;
+}
+.carousel-caption h1 { font-size: 3rem; margin-bottom: 10px; }
+.carousel-caption p { font-size: 1.5rem; }
+
+/* BUSCADOR (NUEVO) */
+.buscador-container {
+    max-width: 600px; margin: 0 auto 30px auto; text-align: center;
+}
+.search-form { display: flex; gap: 10px; }
+.search-form input {
+    flex: 1; padding: 12px 20px; border-radius: 50px; border: 1px solid #ccc; font-size: 1rem;
+}
+.search-form button {
+    padding: 12px 25px; border-radius: 50px; border: none;
+    background-color: #006994; color: white; cursor: pointer; font-weight: bold;
+}
+.search-form button:hover { background-color: #004e92; }
+
+/* FILTROS */
+.filtros { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+.btn-filtro {
+    text-decoration: none; padding: 10px 25px; border-radius: 50px;
+    border: 2px solid #006994; color: #006994; font-weight: 600; transition: all 0.3s ease;
+}
+.btn-filtro:hover, .btn-filtro.activo { background-color: #006994; color: white; }
+
+/* CATÁLOGO */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.catalogo { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+
+.tarjeta {
+    background: white; border-radius: 15px; overflow: hidden;
+    width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+.tarjeta:hover { transform: translateY(-5px); }
+
+.imagen-wrapper { height: 180px; background-color: #ddd; }
+.tarjeta img { width: 100%; height: 100%; object-fit: cover; }
+.contenido { padding: 20px; text-align: center; }
+.contenido h2 { font-size: 1.2rem; margin-bottom: 10px; color: #004e92; }
+.precio { font-size: 1.5rem; font-weight: bold; color: #27ae60; margin-bottom: 15px; }
+
+.btn-comprar {
+    display: inline-block; background-color: #25d366; color: white;
+    text-decoration: none; padding: 10px 20px; border-radius: 50px;
+    font-weight: 600; transition: background 0.3s;
+}
+.btn-comprar:hover { background-color: #1ebe57; }
+
+/* SECCIÓN RESERVAS (NUEVO) */
+.reserva-section {
+    background-color: #e3f2fd; padding: 60px 20px; margin-top: 50px;
+}
+.reserva-grid {
+    display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: center;
+}
+.reserva-info { flex: 1; max-width: 500px; }
+.reserva-info h2 { color: #006994; font-size: 2.5rem; margin-bottom: 20px; }
+.reserva-info ul { list-style: none; margin-top: 20px; }
+.reserva-info li { margin-bottom: 10px; font-size: 1.1rem; }
+
+.reserva-form-card {
+    background: white; padding: 30px; border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 400px;
+}
+.reserva-form-card label { display: block; margin-bottom: 5px; font-weight: 600; }
+.reserva-form-card input {
+    width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ddd;
+}
+.btn-reservar {
+    width: 100%; padding: 15px; background-color: #006994; color: white;
+    border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer;
+}
+.btn-reservar:hover { background-color: #004e92; }
+
+/* TESTIMONIOS */
+.testimonios-section { padding: 60px 20px; background-color: white; margin-top: 0; }
+.testimonios-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+.testimonio-card {
+    background-color: #f9f9f9; padding: 30px; border-radius: 15px; width: 300px;
+    text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #006994; transition: transform 0.3s;
+}
+.testimonio-card:hover { transform: translateY(-5px); }
+
+/* MAPA */
+.mapa-section { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+.mapa-wrapper { border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+/* FOOTER PRO (NUEVO) */
+.footer-pro { background-color: #222; color: #ddd; padding: 60px 20px 20px 20px; margin-top: 50px; }
+.footer-grid { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
+.footer-col { flex: 1; min-width: 250px; }
+.footer-col h3 { color: white; margin-bottom: 20px; border-bottom: 2px solid #006994; display: inline-block; padding-bottom: 10px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col a { color: #bbb; text-decoration: none; transition: color 0.3s; }
+.footer-col a:hover { color: #006994; }
+.redes-sociales { margin-top: 20px; }
+.redes-sociales a { font-size: 1.5rem; margin-right: 15px; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; }
+
+/* BOTÓN FLOTANTE */
+.btn-wsp {
+    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+    background-color: #25d366; color: #FFF; border-radius: 50px;
+    text-align: center; font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000; display: flex; align-items: center; justify-content: center;
+    text-decoration: none; transition: all 0.3s;
+}
+.btn-wsp:hover { background-color: #1ebe57; transform: scale(1.1); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reserva-grid { flex-direction: column; }
+    .carousel-container { height: 350px; }
+    .carousel-caption h1 { font-size: 2rem; }
+    .footer-grid { flex-direction: column; }
+}
+/* ... (MANTÉN TODO TU CSS ANTERIOR ARRIBA) ... */
+
+/* === ESTILOS DEL MODAL DE PAGO === */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Fondo oscuro transparente */
+    z-index: 2000;
+    justify-content: center; align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%; max-width: 450px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute; top: 10px; right: 15px;
+    font-size: 28px; cursor: pointer; color: #aaa;
+}
+.close-btn:hover { color: #333; }
+
+.modal-header { text-align: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.modal-header h2 { color: #006994; margin-bottom: 5px; }
+.precio-modal { font-size: 1.5rem; color: #27ae60; font-weight: bold; }
+
+/* Pestañas */
+.tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #eee; }
+.tab-link {
+    flex: 1; padding: 10px; background: none; border: none;
+    font-weight: 600; cursor: pointer; color: #888;
+    border-bottom: 3px solid transparent; transition: all 0.3s;
+}
+.tab-link.active { color: #006994; border-bottom: 3px solid #006994; }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.5s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Formulario Tarjeta */
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: 500; }
+.input-group input {
+    width: 100%; padding: 12px; border: 1px solid #ddd;
+    border-radius: 8px; font-size: 1rem;
+}
+.row { display: flex; gap: 10px; }
+
+.btn-pagar {
+    width: 100%; padding: 15px; background-color: #006994; color: white;
+    border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
+    cursor: pointer; margin-top: 10px; transition: background 0.3s;
+}
+.btn-pagar:hover { background-color: #004e92; }
+
+.btn-wsp-modal { background-color: #25d366; }
+.btn-wsp-modal:hover { background-color: #1ebe57; }
+
+/* Mensaje Exito */
+.exito-box { text-align: center; padding: 20px; }
+.exito-box i { font-size: 60px; color: #27ae60; margin-bottom: 15px; }
+.exito-box h3 { color: #333; margin-bottom: 10px; }
+/* ... (Todo tu CSS anterior) ... */
+
+/* ESTILO DEL CONTADOR DEL CARRITO */
+#cart-count {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+/* Ajustes tabla carrito */
+.carrito-lista {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+.total-section {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-top: 2px solid #eee;
+    padding-top: 10px;
+}
+/* ... (MANTÉN TODO TU CSS ANTERIOR) ... */
+
+/* ESTILOS PARA LA TARJETA DEL BANCO PICHINCHA */
+.banco-info {
+    background-color: #fffbe6; /* Fondo amarillo suave */
+    border: 1px solid #ffdd57; /* Borde amarillo más fuerte */
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.banco-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffe58f;
+    padding-bottom: 8px;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.datos-cuenta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.datos-cuenta li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.datos-cuenta li span:first-child {
+    font-weight: 500;
+    color: #666;
+}
+
+.datos-cuenta li strong {
+    color: #000;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
